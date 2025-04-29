@@ -16,12 +16,42 @@ Built with Charm’s BubbleTea.
 Installation
 
 1. Download the latest binary
+   (Or build yourself from source — see below)
 
-(Or build yourself from source — see below)
+#### Download the latest binary
+
+##### macOS (Apple Silicon - M1/M2)
+
+```bash
+curl -L https://github.com/tbilbe/metajournal-go/releases/download/v1.0.0/metajournal-darwin-arm64 -o /usr/local/bin/metajournal
+chmod +x /usr/local/bin/metajournal
+```
+
+##### macOS (Intel)
+
+```bash
+curl -L https://github.com/tbilbe/metajournal-go/releases/download/v1.0.0/metajournal-darwin-amd64 -o /usr/local/bin/metajournal
+chmod +x /usr/local/bin/metajournal
+```
+
+##### Linux (x86_64)
+
+```bash
+curl -L https://github.com/tbilbe/metajournal-go/releases/download/v1.0.0/metajournal-linux-amd64 -o /usr/local/bin/metajournal
+chmod +x /usr/local/bin/metajournal
+```
+
+##### Windows
+
+download the latest windows binary from the [releases page](https://github.com/tbilbe/metajournal-go/releases)
+
+> metajournal-windows-amd64.exe
+
+#### Manual build
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_GITHUB_USERNAME/metajournal-go.git
+git clone https://github.com/tbilbe/metajournal-go.git
 cd metajournal-go
 
 # Build the binary
@@ -38,14 +68,14 @@ This tool uses an environment variable to know where to save your journal files.
 Choose a location where your journals should live, e.g.:
 
 ```bash
-export METAJOURNAL_SAVE_PATH="$HOME/dev/work/professional-brag/data/journal"
+export METAJOURNAL_SAVE_PATH="$HOME/where/should/work/live/journal"
 ```
 
 To make it permanent, add it to your shell configuration:
 (if using zsh)
 
 ```bash
-echo 'export METAJOURNAL_SAVE_PATH="$HOME/dev/work/professional-brag/data/journal"' >> ~/.zshrc
+echo 'export METAJOURNAL_SAVE_PATH="$HOME/dev/work/professional-brag/data/"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
@@ -67,13 +97,13 @@ You’ll be prompted to select Daily or Weekly.
 $METAJOURNAL_SAVE_PATH/week-beginning/<week-start-date>/<date>_<daily|weekly>_entry.md
 ```
 
-    •	Example:
+for example:
 
 ```
 ~/dev/work/professional-brag/data/journal/week-beginning/2025-04-28/2025-04-28_daily_entry.md
 ```
 
-Development
+##### Development
 
 If you want to build from source manually:
 

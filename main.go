@@ -281,7 +281,7 @@ companyGoals: %s
 ## Improvements for Next Week
 %s
 `,
-		dateStr,
+dateStr,
 		m.entryType,
 		weekStart,
 		currentGoalsList,
@@ -318,7 +318,6 @@ func formatList(list []string) string {
 	}
 	return fmt.Sprintf("[%s]", strings.Join(list, ", "))
 }
-
 func formatBulletPoints(points []string) string {
 	if len(points) == 0 {
 		return "* No items recorded\n"
